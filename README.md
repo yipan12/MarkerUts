@@ -6,4 +6,8 @@ Disini saya membuar 5 marker
 
 3 marker rumah
 
+4 marker burung
+
+5 marker taman
+
 lalu saya juga sudah menyiapkan website static untuk scan markernya (Barcode.html)
