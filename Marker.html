@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+    <title>Marker Hiro</title>
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <a-scene embedded arjs="detectionMode:mono_and_matrix; matrixCodeType:3x3_PARITY65">
+      <a-marker type="barcode" value="3">
+        <!-- marker rumah -->
+        <a-entity rotation="0 0 0" position="0 0 0">
+          <a-box position="0 0.25 0" width="1" depth="1" height="0.2" material="color: #8B4513"></a-box>
+          <a-box position="0 0.6 0" width="0.8" depth="0.8" height="0.8" material="color: #FFE4B5"></a-box>
+          <a-pyramid position="0 1.1 0" width="1" depth="1" height="0.6" material="color: #8B4513"></a-pyramid>
+          <a-box position="0 0.4 0.4" width="0.3" depth="0.1" height="0.5" material="color: #654321"></a-box>
+          <a-box position="-0.3 0.6 0.4" width="0.2" depth="0.1" height="0.2" material="color: #87CEEB"></a-box>
+          <a-box position="0.3 0.6 0.4" width="0.2" depth="0.1" height="0.2" material="color: #87CEEB"></a-box>
+        </a-entity>
+      </a-marker>
+
+      <!-- marker hiro -->
+      <a-marker preset="hiro">
+        <a-torus color="#ff69b4" radius="0.3" radius-tubular="0.05" animation__rotation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
+          <a-animation attribute="material.color" from="#ff69b4" to="#4b0082" dur="5000" direction="alternate" repeat="indefinite"> </a-animation>
+        </a-torus>
+      </a-marker>
+
+      <!-- Marker Kanji -->
+      <a-marker preset="kanji">
+        <a-sphere color="#87CEEB" radius="0.3" animation__rotation="property: rotation; to: 360 360 360; loop: true; dur: 4000"> </a-sphere>
+      </a-marker>
+
+      <a-entity camera>
+        <a-cursor></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
